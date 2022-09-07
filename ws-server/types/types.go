@@ -51,3 +51,19 @@ type JoinRoomRequest struct {
 	roomName string `json:"roomName"`
 	jwt      string `json:jwt`
 }
+
+type WsAuthRequest struct {
+	userId string
+	roomId int64
+	secret string
+}
+
+type UserAuthObject struct {
+	User struct {
+		Name  string `json:"name"`
+		Email string `json:"email"`
+		Image string `json:"image"`
+		Id    string `json:"id"`
+	} `json:"user"`
+	Expires time.Time `json:"expires"`
+}

@@ -2,10 +2,9 @@ package ws
 
 import (
 	"encoding/json"
-	"log"
-
 	t "github.com/NotNullDev/realtime-chat-backend/types"
 	"github.com/gorilla/websocket"
+	"log"
 )
 
 var ChatServer = t.WsServer{
@@ -18,38 +17,26 @@ var activeUsers = []t.ChatUser{}
 func HandleWebsocketClient(conn *websocket.Conn) {
 	for {
 		handleMessage(conn)
-
-		// messageType, messageContent, err := conn.ReadMessage()
-
-		// if err != nil {
-		// 	log.Println(err)
-		// }
-
-		// log.Printf("Received message of type [%d] with content: [%s]", messageType, messageContent)
 	}
 }
 
 func handleMessage(conn *websocket.Conn) {
 	// var msg t.ChatMessage
+	msgType, msg, err := conn.ReadMessage()
 
-	for {
-		msgType, msg, err := conn.ReadMessage()
+	if err != nil {
+		log.Printf("ERROR: could not read message. Error: [%s]", err.Error())
+	}
 
-		if err != nil {
-			log.Printf("ERROR: could not read message. Error: [%s]", err.Error())
-		}
+	log.Printf("Received message wity type %d and content: %v", msgType, string(msg))
 
-		log.Printf("Received message wity type %d and content: %v", msgType, string(msg))
+	log.Printf("Trying to translate message...")
 
-		log.Printf("Trying to translate message...")
+	var translatedMessage t.ChatMessage
 
-		var translatedMessage t.ChatMessage
+	err = json.Unmarshal(msg, &translatedMessage)
 
-		err = json.Unmarshal(msg, &translatedMessage)
-
-		if err != nil {
-			log.Println(err.Error())
-		}
-
+	if err != nil {
+		log.Println(err.Error())
 	}
 }

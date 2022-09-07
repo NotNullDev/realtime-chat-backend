@@ -1,4 +1,12 @@
-2022/09/05 23:28:18 Creating dummy value.
-2022/09/05 23:28:18 Reading dummy value.
-2022/09/05 23:28:18 Found object: {{1 2022-09-05 23:28:18.407557835 +0200 +0200 2022-09-05 23:28:18.407557835 +0200 +0200 {0001-01-01 00:00:00 +0000 UTC false}} :)}
-2022/09/05 23:28:18 Started server on: localhost:7777
+2022/09/07 08:55:55 Creating dummy value.
+2022/09/07 08:55:55 Reading dummy value.
+2022/09/07 08:55:55 Found object: {{1 2022-09-06 00:15:43.403630728 +0200 +0200 2022-09-06 00:15:43.403630728 +0200 +0200 {0001-01-01 00:00:00 +0000 UTC false}} :)}
+2022/09/07 08:55:55 Started server on: localhost:7777
+2022/09/07 08:55:58 New connection started
+2022/09/07 08:55:58 Auhorization granted for request with data: [{cl7qsno9d0008n69ovydyj639 1 97a4ae47-fa04-4723-95d3-f545ba617d8b}]
+2022/09/07 08:55:58 websocket: the client is not using the websocket protocol: 'upgrade' token not found in 'Connection' header
+2022/09/07 08:56:13 New connection started
+2022/09/07 08:56:13 Authorization no granted for request with data: [{cl7qsno9d0008n69ovydyj639 1 97a4ae47-fa04-4723-95d3-f545ba617d8ba}]
+2022/09/07 08:56:21 New connection started
+2022/09/07 08:56:21 Auhorization granted for request with data: [{cl7qsno9d0008n69ovydyj639 1 97a4ae47-fa04-4723-95d3-f545ba617d8b}]
+2022/09/07 08:56:21 websocket: the client is not using the websocket protocol: 'upgrade' token not found in 'Connection' header

@@ -35,7 +35,7 @@ func main() {
 
 	db.Init()
 	http.HandleFunc("/ws", h.WsHttpEndpointHandler)
-	http.HandleFunc("/joinToRoom", func(writer http.ResponseWriter, request *http.Request) {
+	http.HandleFunc("/sampleEndpoint", func(writer http.ResponseWriter, request *http.Request) {
 		body, err := io.ReadAll(request.Body)
 
 		if err != nil {
